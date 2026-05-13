@@ -17,6 +17,7 @@ void combination_main(int n){
     return;
 }
 void combination(int pos, int n, int open, int close){
+    int i = 0;
     static char str[MAX];
 
     if(close == n){
@@ -35,6 +36,7 @@ void combination(int pos, int n, int open, int close){
             combination(pos+1, n, open, close+1);
         }
     }
+    i++;
 }
 
 int main(){
@@ -42,8 +44,10 @@ int main(){
     scanf("%d", &n);
     
     combination_main(n);
+    int total; 
+    total = n*2 - 1;
+    printf("TOTAL %d", total);
     getchar();
     return 0;
-
 
 }
