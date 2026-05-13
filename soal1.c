@@ -8,6 +8,21 @@
 #include <stdio.h> 
 
 #define MAX 100
+
+long factorial(int n) {
+    int c;
+    long result = 1;
+    for (c = 1; c <= n; c++)
+        result = result * c;
+    return result;
+} 
+
+long find_ncr(int n, int r) {
+    long result;
+    result = factorial(n) / (factorial(r) * factorial(n - r));
+    return result;
+} 
+
 void combination(int pos, int n, int open, int close);
 
 void combination_main(int n){
@@ -43,9 +58,12 @@ int main(){
     int n; 
     scanf("%d", &n);
     
+    //parameter untuk fungsi kombinasi 
+    //untuk n : 
+    int m = n*2;
+
     combination_main(n);
-    int total; 
-    total = n*2 - 1;
+    int total = (find_ncr(m, n)) / n-1;
     printf("TOTAL %d", total);
     getchar();
     return 0;
