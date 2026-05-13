@@ -26,9 +26,6 @@ long find_ncr(int n, int r) {
 void combination(int pos, int n, int open, int close);
 
 void combination_main(int n){
-    if(n==0){
-        return;
-    }
     if (n>0){
         combination(0,n,0,0);
     }
@@ -38,6 +35,10 @@ void combination(int pos, int n, int open, int close){
     int i = 0;
     static char str[MAX];
 
+    if(n==0){
+        return;
+    }
+    
     if(close == n){
         printf("%s\n", str);
         return;
