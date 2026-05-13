@@ -21,7 +21,7 @@ void combination(int pos, int n, int open, int close){
     static char str[MAX];
 
     if(close == n){
-        printf("%s \n", str);
+        printf("%s\n", str);
         return;
     }
 
