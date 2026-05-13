@@ -38,7 +38,7 @@ void combination(int pos, int n, int open, int close){
     if(n==0){
         return;
     }
-    
+
     if(close == n){
         printf("%s\n", str);
         return;
@@ -67,7 +67,7 @@ int main(){
     int m = n*2;
 
     combination_main(n);
-    int total = (find_ncr(m, n)) / n-1;
+    int total = (find_ncr(m, n)) / (n+1);
     printf("TOTAL %d", total);
     getchar();
     return 0;
